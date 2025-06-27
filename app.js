@@ -1,16 +1,20 @@
 async function ladePatientenDaten() {
     try {
+        // Abruf der Patientendaten von HAPI FHIR Server
         const antwort = await fetch('https://hapi.fhir.org/baseR4/Patient/48066251');
         const patient = await antwort.json();
 
+         // Name zusammensetzen aus Vor- und Nachname
         const vorname = patient.name[0].given.join(' ');
         const nachname = patient.name[0].family;
         const name = vorname + ' ' + nachname;
 
+        // Weitere Stammdaten extrahieren
         const geburtsdatum = patient.birthDate;
         const geschlecht = patient.gender;
         const alter = berechneAlter(geburtsdatum);
 
+        // Versicherungsart ermitteln anhand der Identifier (z. B. GKV oder PKV)
         let versicherung = 'Unbekannt';
         const ids = patient.identifier || [];
         for (let i = 0; i < ids.length; i++) {
@@ -24,6 +28,7 @@ async function ladePatientenDaten() {
             }
         }
 
+        // Patientendaten in die HTML-Oberfläche einfügen
         document.querySelector('.patient-info h1').textContent = name;
         document.querySelector('.geburtsdatum').textContent = geburtsdatum;
         document.querySelector('.geschlecht').textContent = übersetzeGeschlecht(geschlecht);
@@ -35,6 +40,7 @@ async function ladePatientenDaten() {
     }
 }
 
+// Alter dynamisch auf Basis des Geburtsdatums berechnen
 function berechneAlter(geburtsdatum) {
     const geburt = new Date(geburtsdatum);
     const heute = new Date();
@@ -46,6 +52,7 @@ function berechneAlter(geburtsdatum) {
     return jahre;
 }
 
+// Geschlecht auf deutsch übersetzen
 function übersetzeGeschlecht(code) {
     if (code === 'male') return 'männlich';
     if (code === 'female') return 'weiblich';
@@ -53,4 +60,5 @@ function übersetzeGeschlecht(code) {
     return 'unbekannt';
 }
 
+// Beim Laden der Seite Patientendaten abrufen
 window.onload = ladePatientenDaten;

@@ -10,18 +10,22 @@
 
 <body>
     <div class="container">
-        <!-- Seitenleiste -->
+        <!-- Seitenleiste, momentan leer -->
         <aside class="sidebar"></aside>
 
         <!-- Hauptbereich -->
         <main class="main-content">
             <header class="header">
                 <div class="patient-info">
+                    <!-- Name des Patienten (wird später per JavaScript ersetzt) -->
                     <h1>Toni Tester</h1>
+                    <!-- Zeile mit grundlegenden Stammdaten -->
                     <div class="info-row">
+                        <!-- Fiktive Patientennummer -->
                         <div><span class="label">Patientennummer</span>
                             <div class="box">389438</div>
                         </div>
+                        <!-- Dynamisch eingefügte FHIR-Daten -->
                         <div><span class="label">Geburtsdatum</span><strong class="geburtsdatum">--</strong></div>
                         <div><span class="label">Geschlecht</span><strong class="geschlecht">--</strong></div>
                         <div><span class="label">Versicherungsform</span><strong class="versicherungsform">--</strong></div>
@@ -31,13 +35,16 @@
             </header>
 
             <section class="content">
+                <!-- Karte mit zusätzlichen Stammdaten -->
                 <div class="stammdaten-card">
                     <h1>Stammdaten</h1>
+                    <!-- Alter wird dynamisch berechnet -->
                     <p>Alter <span class="alter">--</span></p>
+                    <!-- Gewicht und Größe sind statisch -->
                     <p>Gewicht <span>68 kg</span></p>
                     <p>Größe <span>1,72 m</span></p>
                 </div>
-
+                <!-- Übersicht über weiterführende Daten (Beispielwerte) -->
                 <div class="cards">
                     <div class="card dark">
                         <p>Diagnosen</p>
@@ -55,6 +62,7 @@
             </section>
         </main>
     </div>
+    <!-- Verlinkung der JavaScript-Datei, welche die FHIR-Daten lädt -->
     <script src="app.js"></script>
 </body>
 
