@@ -16,17 +16,17 @@ async function ladePatientenDaten() {
         for (let i = 0; i < ids.length; i++) {
             const code = ids[i].type?.coding?.[0]?.code;
             if (code === 'GKV') {
-                versicherung = 'Gesetzlich';
+                versicherung = 'gesetzlich';
                 break;
             } else if (code === 'PKV') {
-                versicherung = 'Privat';
+                versicherung = 'privat';
                 break;
             }
         }
 
         document.querySelector('.patient-info h1').textContent = name;
         document.querySelector('.geburtsdatum').textContent = geburtsdatum;
-        document.querySelector('.geschlecht').textContent = geschlecht;
+        document.querySelector('.geschlecht').textContent = übersetzeGeschlecht(geschlecht);
         document.querySelector('.versicherungsform').textContent = versicherung;
         document.querySelector('.alter').textContent = alter;
 
@@ -44,6 +44,13 @@ function berechneAlter(geburtsdatum) {
         jahre--;
     }
     return jahre;
+}
+
+function übersetzeGeschlecht(code) {
+    if (code === 'male') return 'männlich';
+    if (code === 'female') return 'weiblich';
+    if (code === 'other') return 'anderes';
+    return 'unbekannt';
 }
 
 window.onload = ladePatientenDaten;
