@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+h1 {
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
+    margin: 0 0 0.5rem 0;
+}
+
+/* Seitenleiste */
+.sidebar {
+    width: 70px;
+    background: linear-gradient(to bottom, #e0e0e0, #ccc);
+}
+
+
+.profile-img-bottom {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Hauptbereich */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: #eee;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.info-row {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.label {
+    font-size: 0.8rem;
+    color: #666;
+    display: block;
+}
+
+.box {
+    background: #00e4c1;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+/* Inhalt */
+.content {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.stammdaten-card {
+    border: 2px solid #00e4c1;
+    border-radius: 10px;
+    padding: 1rem;
+    min-width: 180px;
+}
+
+.stammdaten-card p {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card.dark {
+    background-color: #264653;
+    color: #00ECBC;
+    padding: 1.5rem;
+    border-radius: 15px;
+    width: 150px;
+    text-align: center;
+}
+
+.card.dark p {
+    margin: 0;
+    color: #fff;
+}
+
+.card.dark strong {
+    font-size: 1.5rem;
+}

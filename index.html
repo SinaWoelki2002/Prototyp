@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patientenübersicht</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Seitenleiste -->
+        <aside class="sidebar"></aside>
+
+        <!-- Hauptbereich -->
+        <main class="main-content">
+            <header class="header">
+                <div class="patient-info">
+                    <h1>Toni Tester</h1>
+                    <div class="info-row">
+                        <div><span class="label">Patientennummer</span>
+                            <div class="box">389438</div>
+                        </div>
+                        <div><span class="label">Geburtsdatum</span><strong>26.06.1968</strong></div>
+                        <div><span class="label">Geschlecht</span><strong>weiblich</strong></div>
+                        <div><span class="label">Krankenkasse</span><strong>BKK MTU</strong></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content">
+                <div class="stammdaten-card">
+                    <h1>Stammdaten</h1>
+                    <p>Alter <span>47</span></p>
+                    <p>Gewicht <span>68 kg</span></p>
+                    <p>Größe <span>1,72 m</span></p>
+                </div>
+
+                <div class="cards">
+                    <div class="card dark">
+                        <p>Diagnosen</p>
+                        <strong>4</strong>
+                    </div>
+                    <div class="card dark">
+                        <p>Dokumente</p>
+                        <strong>28</strong>
+                    </div>
+                    <div class="card dark">
+                        <p>Abrechnungen</p>
+                        <strong>14</strong>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
